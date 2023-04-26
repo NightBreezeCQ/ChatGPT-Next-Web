@@ -32,7 +32,7 @@ const DEFAULT_CONFIG = {
   modelConfig: {
     model: "gpt-3.5-turbo" as ModelType,
     temperature: 1,
-    max_tokens: 2000,
+    max_tokens: 5000,
     presence_penalty: 0,
   },
 };
@@ -101,7 +101,7 @@ export const ModalConfigValidator = {
     return limitModel(x) as ModelType;
   },
   max_tokens(x: number) {
-    return limitNumber(x, 0, 32000, 2000);
+    return limitNumber(x, 0, 32000, 5000);
   },
   presence_penalty(x: number) {
     return limitNumber(x, -2, 2, 0);
